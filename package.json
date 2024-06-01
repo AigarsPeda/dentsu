@@ -7,12 +7,17 @@
     "setup:backend": "cd backend && yarn",
     "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
     "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
+    "backend:build": "cd backend && yarn build",
+    "backend:start": "cd backend && yarn start",
+    "frontend:build": "cd frontend && yarn build",
+    "frontend:start": "cd frontend && yarn start",
     "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
-    "repo:upstream": "git fetch upstream && git merge upstream/main"
+    "build": "yarn clear && concurrently \"cd backend && yarn build && yarn start\" \"cd frontend && yarn build && yarn start\""
   },
   "dependencies": {
     "concurrently": "^8.2.2",
-    "npm-check-updates": "^16.14.15"
+    "npm-check-updates": "^16.14.15",
+    "wait-on": "^7.2.0"
   }
 }
