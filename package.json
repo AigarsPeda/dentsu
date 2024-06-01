@@ -13,7 +13,7 @@
     "frontend:start": "cd frontend && yarn start",
     "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
     "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
-    "build": "yarn clear && concurrently \"cd backend && yarn build && yarn start\" \"cd frontend && yarn build && yarn start\""
+    "serve": "yarn clear && concurrently \"cd backend && yarn build && yarn start\" \"cd frontend && yarn build && yarn start\""
   },
   "dependencies": {
     "concurrently": "^8.2.2",
